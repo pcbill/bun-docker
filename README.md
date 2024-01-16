@@ -1,43 +1,75 @@
-# bun-docker
+# Nuxt 3 Minimal Starter
 
-> Deploy a simple Bun [HTTP server](https://bun.sh/docs/api/http) on Render
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-[Bun](https://bun.sh/) is a JavaScript runtime that serves as a bundler, test runner, and package manager.
+## Setup
 
-## Prerequisites
+Make sure to install the dependencies:
 
-Refer to the [Bun documentation](https://bun.sh/docs/installation) to install Bun.
+```bash
+# npm
+npm install
 
-## Usage
+# pnpm
+pnpm install
 
-### `bun install`
+# yarn
+yarn install
 
-To run this app locally, first run `bun install` to install the dependencies.
+# bun
+bun install
+```
 
-### `bun dev`
+## Development Server
 
-Run `bun dev` or `bun run dev` to start the server locally.
+Start the development server on `http://localhost:3000`:
 
-Running the app in dev uses the [`--hot` reload flag](https://bun.sh/docs/runtime/hot#hot-mode), which Bun uses to re-run changed files without restarting the `bun` process.
+```bash
+# npm
+npm run dev
 
-If no `PORT` environment variable is specified, the server will run on port `8081`. Visit [http://localhost:8081](http://localhost:8081) to view the app.
+# pnpm
+pnpm run dev
 
-### `bun start`
+# yarn
+yarn dev
 
-Run `bun start` or `bun run start` to start the server locally without the `--hot` reload flag.
+# bun
+bun run dev
+```
 
-## Deploy to Render
+## Production
 
-Use the official [Bun Docker image](https://hub.docker.com/r/oven/bun) to deploy this app to Render.
+Build the application for production:
 
-### Manual deploy
+```bash
+# npm
+npm run build
 
-1. [Fork this repo](https://github.com/render-examples/bun-docker/fork) on GitHub or click **Use this template**.
-2. Create a new **web service** on Render, and give Render permission to access your new repo.
-3. Select **Docker** as your service's runtime.
+# pnpm
+pnpm run build
 
-That's it! Your web service will be live on your Render URL as soon as the build finishes.
+# yarn
+yarn build
 
-### One-click deploy
+# bun
+bun run build
+```
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/render-examples/bun-docker)
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
