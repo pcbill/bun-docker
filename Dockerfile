@@ -21,11 +21,14 @@ RUN bun install
 #FROM install AS prerelease
 #COPY --from=install /temp/node_modules node_modules
 #COPY . .
-
-FROM install AS release
-#COPY --chown=bun:bun --from=install /temp/node_modules node_modules
-#COPY --chown=bun:bun --from=prerelease /usr/src/app/.output .
+FROM base AS build
 RUN bun run build
+
+
+FROM build AS release
+#COPY --chown=bun:bun --from=install /temp/node_modules node_modules
+COPY --chown=bun:bun --from=prerelease /usr/src/app/.output .
+#RUN bun run build
 
 #USER bun
 #ENV HOST 0.0.0.0
