@@ -22,15 +22,15 @@ RUN bun install
 #COPY --from=install /temp/node_modules node_modules
 #COPY . .
 
-#FROM base AS release
+FROM install AS release
 #COPY --chown=bun:bun --from=install /temp/node_modules node_modules
-#RUN ls WORKDIR
 #COPY --chown=bun:bun --from=prerelease /usr/src/app/.output .
+RUN bun run build
 
 #USER bun
 #ENV HOST 0.0.0.0
 #EXPOSE 3000
-ENTRYPOINT [ "bun", "run", "dev" ]
+ENTRYPOINT [ "bun", "run", "preview" ]
 
 #ENV NODE_ENV=production
 #RUN bun run build
