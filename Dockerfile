@@ -55,8 +55,8 @@ COPY --chown=bun:bun --from=prerelease /usr/src/app/.output .
 USER bun
 ENV HOST 0.0.0.0
 EXPOSE 3000
-#ENTRYPOINT [ "bun", "run", "server/index.mjs" ]
-ENTRYPOINT [ "bun", "run", "preview" ]
+ENTRYPOINT [ "bun", "run", "server/index.mjs" ]
+#ENTRYPOINT [ "bun", "run", "preview" ]
 
 
 #ENV NODE_ENV production
