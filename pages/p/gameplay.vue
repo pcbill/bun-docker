@@ -11,19 +11,19 @@
   </UForm>
   <UTable :rows="state.rows" :columns="columns">
     <template #actions-data="{ row }">
-        <UButton @click="deleteGameplay(row.gid)">刪除</UButton>
-        <NuxtLink v-if='row.exec_type != 0' :to='{ path: "/p/editWinner", query: { gid: `${row.gid}` }}' >
+        <UButton @click="deleteGameplay(row.id)">刪除</UButton>
+        <NuxtLink v-if='row.exec_type != 0' :to='{ path: "/p/editWinner", query: { gid: `${row.id}` }}' >
           <UButton>修改得獎者</UButton>
         </NuxtLink>
         <div v-if="row.reminder_count > 0">
           <div v-if="row.exec_type == 0 && peopleCountWithoutAward >= row.reminder_count">
-            <NuxtLink :to='{path:"/p/normalAward", query:{ gid: `${row.gid}` }}'>
+            <NuxtLink :to='{path:"/p/normalAward", query:{ gid: `${row.id}` }}'>
               <UButton>進入一般抽獎</UButton>
             </NuxtLink>
           </div>
           <div v-else-if="peopleCountWithoutAward >= 1">
             <NuxtLink :to='{path:"/big/bigAward", query:{ award: `${row.award_list}`,
-                                                        gid: `${row.gid}` }
+                                                        gid: `${row.id}` }
             }'>
               <UButton>進入抽大獎</UButton>
             </NuxtLink>

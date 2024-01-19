@@ -25,7 +25,7 @@ const rows = data.value.rows
   共有 {{rows.length}} 獎項
   <UTable :rows="rows" :columns="columns">
     <template #actions-data="{ row }">
-      <NuxtLink :to='{ path: "/pub/winnerList", query: { gid: `${row.gid}` }}'>
+      <NuxtLink :to='{ path: "/pub/winnerList", query: { gid: `${row.id}` }}'>
         <UButton>得獎者列表</UButton>
       </NuxtLink>
     </template>
