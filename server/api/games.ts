@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
 
     let sl:string = 'SELECT * from game ';
     if (q.gid) {
-        sl += " WHERE gid = '" + q.gid + "'";
+        sl += " WHERE id = '" + q.gid + "'";
     }
     sl += " order by create_time ";
 
