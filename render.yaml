@@ -2,14 +2,6 @@ services:
   - type: web
     name: bun
     env: docker
-    repo: https://github.com/render-examples/bun-docker
+    repo: https://github.com/pcbill/bun-docker.git
     plan: starter
     autoDeploy: false
-
-#services:
-#  - type: web
-#    name: nuxt-js
-#    env: node
-#    plan: starter
-#    buildCommand: yarn; yarn build
-#    startCommand: yarn start
